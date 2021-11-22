@@ -9,13 +9,13 @@ const routes = require('./controllers')
 const sequelizeSessionStore = require('connect-session-sequelize')(session.Store)
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 const sess = {
     secret: 'secretofallsecrets',
     cookie: {},
-    resave: false,
-    saveUnitialized: true,
+    resave: true,
+    saveUninitialized: true,
     store: new sequelizeSessionStore({
         db: sequelize,
     })
