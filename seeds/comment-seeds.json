@@ -1,0 +1,18 @@
+[
+    {
+      "text": "my first test",
+      "blogpost_id": 1
+    },
+    {
+      "text": "my second test",
+      "blogpost_id": 1
+    },
+    {
+      "text": "my third test",
+      "blogpost_id": 2
+    },
+    {
+      "text": "my fourth test",
+      "blogpost_id": 3
+    }
+]

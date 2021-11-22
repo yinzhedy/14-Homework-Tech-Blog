@@ -1,0 +1,38 @@
+<article>
+    <a href="/user-page"> Back to profile</a>
+    <h2>
+        Edit Post
+    </h2>
+    <form class="edit-post-form">
+        <div>
+            <input name="post-title" type="text" value="{{post.title}}" />
+            <span>({{format_url post.post_url}})</span>
+        </div>
+        <div>
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+        <button type="submit">submit post</button>
+        <button type="button" class="delete-post-btn">delete post</button>
+    </form>
+</article>
+
+{{> post-info post}}
+
+{{#if loggedIn}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/public/js/edit.js"></script>
+<script src="/public/js/delete.js"></script>
+<script src="/public/js/comment.js"></script>
+{{/if}}
